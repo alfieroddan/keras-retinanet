@@ -47,8 +47,8 @@ LABELS = {int(L.split(",")[1]): L.split(",")[0] for L in LABELS}
 model = models.load_model(args["model"], backbone_name='resnet50')
 
 # grab input image paths
-inference_images = [os.path.join(input_path, file) for file in glob.glob(input_path + '*.jpg')]
-
+inference_images = [file for file in glob.glob(input_path + '*.jpg')]
+print(inference_images)
 
 # loop over inference images
 for (i, img_path) in enumerate(inference_images):

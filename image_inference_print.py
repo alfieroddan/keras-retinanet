@@ -38,7 +38,7 @@ input_path = args["input_dir"]
 output_path = args["output_dir"]
 THRES_SCORE = args["threshold"]
 model = models.load_model(args["model"], backbone_name='resnet50')
-inference_images = [os.path.join(input_path, file) for file in glob.glob(input_path + '*.jpg')]
+inference_images = [file for file in glob.glob(input_path + '*.jpg')]
 
 # loop over inference images
 for (i, img_path) in enumerate(inference_images):
